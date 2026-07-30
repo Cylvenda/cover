@@ -3,7 +3,7 @@ import type { RefObject } from 'react'
 import { animate, motion, useAnimation, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion'
 import type { PointerState } from '../types'
 
-const TITLE='CYLVENDA.CO.TZ'
+const TITLE='cylvenda.co.tz'
 const dances = [
   { rotateZ:[0,-2,2,0],scaleY:[1,1.13,.92,1] },
   { rotateY:[0,22,-18,0],rotateX:[0,-8,8,0] },

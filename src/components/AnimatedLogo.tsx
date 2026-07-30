@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 export function LogoMark({ className = '' }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 160 160" fill="none" role="img" aria-label="Cylvenda CV monogram">
+    <svg className={className} viewBox="0 0 160 160" fill="none" role="img" aria-label="cylvenda CV monogram">
       <defs>
         <linearGradient id="cv" x1="25" y1="22" x2="137" y2="142" gradientUnits="userSpaceOnUse">
           <stop stopColor="#70F6FF"/><stop offset=".48" stopColor="#2694FF"/><stop offset="1" stopColor="#A455FF"/>

@@ -1,0 +1,17 @@
+{
+  "name": "cylvenda",
+  "short_name": "cylvenda",
+  "description": "Digital craftsmanship and future systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020309",
+  "theme_color": "#03040a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

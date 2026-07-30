@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cylvenda.co.tz/sitemap.xml
