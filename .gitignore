@@ -19,6 +19,11 @@
 
 # production
 /build
+/dist
+
+# generated Vite config output
+/vite.config.js
+/vite.config.d.ts
 
 # misc
 .DS_Store
