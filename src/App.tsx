@@ -8,6 +8,7 @@ import { FloatingParticles } from './components/FloatingParticles'
 import { InteractiveTitle } from './components/InteractiveTitle'
 import { AmbientMessages } from './components/AmbientMessages'
 import { Controls } from './components/Controls'
+import { SocialLinks } from './components/SocialLinks'
 import { usePointer } from './hooks/usePointer'
 
 export default function App(){
@@ -22,7 +23,7 @@ export default function App(){
       <InteractiveTitle pointer={pointer}/>
       <motion.p className="tagline" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:1.8,duration:1}}>DIGITAL CRAFTSMANSHIP <i/> FUTURE SYSTEMS</motion.p>
     </section>
-    <AmbientMessages/><Controls/>
+    <AmbientMessages/><SocialLinks/><Controls/>
     <div className="intro-curtain" aria-hidden="true"/>
   </main>
 }
