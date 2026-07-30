@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 type Social = {
@@ -35,7 +35,7 @@ const socials: Social[] = [
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/cylvenda',
+    href: 'https://github.com/Cylvenda',
     icon: <svg {...iconProps}><path d="M15 22v-3.8c0-1 .1-1.5-.5-2.1 3.2-.4 6.5-1.6 6.5-7A5.5 5.5 0 0 0 19.5 5c.2-.4.7-2-.2-4 0 0-1.2-.4-4.3 1.6a15 15 0 0 0-6 0C5.9.6 4.7 1 4.7 1c-.9 2-.4 3.6-.2 4A5.5 5.5 0 0 0 3 9.1c0 5.4 3.3 6.6 6.5 7-.5.5-.6 1-.6 2.1V22"/><path d="M9 19c-3 .9-3-1.5-4.2-2"/></svg>,
   },
   {
@@ -50,7 +50,7 @@ const socials: Social[] = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/company/cylvenda',
+    href: 'https://linkedin.com/brayan-mlawa',
     icon: <svg {...iconProps}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.1M12 17v-4c0-1.7 1-3 2.7-3 1.5 0 2.3 1 2.3 3v4M12 10v7"/></svg>,
   },
   {
@@ -61,6 +61,8 @@ const socials: Social[] = [
 ]
 
 export function SocialLinks() {
+  const reducedMotion = useReducedMotion()
+
   return (
     <motion.nav
       className="social-dock"
@@ -77,9 +79,26 @@ export function SocialLinks() {
           rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
           aria-label={social.label}
           data-label={social.label}
-          whileHover={{ y: -5, scale: 1.12 }}
+          data-social={social.label.toLowerCase()}
+          animate={reducedMotion ? undefined : {
+            y: [0, -6, 2, 0],
+            rotate: [0, index % 2 ? 8 : -8, index % 2 ? -5 : 5, 0],
+            scale: [1, 1.08, .98, 1],
+          }}
+          whileHover={{
+            y: -9,
+            scale: 1.24,
+            rotate: 360,
+            transition: { type: 'spring', stiffness: 360, damping: 16 },
+          }}
           whileTap={{ scale: .9 }}
-          transition={{ type: 'spring', stiffness: 420, damping: 20, delay: index * .015 }}
+          transition={reducedMotion ? undefined : {
+            duration: 2.5 + (index % 3) * .35,
+            repeat: Infinity,
+            repeatDelay: .35 + (index % 2) * .3,
+            delay: index * .16,
+            ease: 'easeInOut',
+          }}
         >
           {social.icon}
         </motion.a>
